@@ -1,0 +1,21 @@
+            <section id="diapositiva-novedades" class="main style3">
+                <header>
+                    <h2>Últimas Novedades</h2>
+                </header>
+                <div class="row">
+                    {% for novedad in object_list %}
+                    <article class="4u special">
+                        <a href="{{ novedad.get_absolute_url }}" class="image featured"><img src="{{ novedad.imagen_novedad.url }}" alt="{{ novedad.titulo }}" /></a>
+                        <header>
+                            <h3><a href="{{ novedad.get_absolute_url }}">{{ novedad.titulo }}</a></h3>
+                        </header>
+                        {{ novedad.contenidos|truncatewords_html:20|striptags|safe }}
+                    </article>
+                    {% endfor %}
+                </div>
+                <footer class="major">
+                    <ul class="buttons">
+                        <li><a href="{% url 'contenido-novedad-list' %}" class="button">Ver más</a></li>
+                    </ul>
+                </footer>
+            </section>

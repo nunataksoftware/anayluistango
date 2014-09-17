@@ -2,6 +2,7 @@
 {% load contenidos_filters %}
 
         {% for diapositiva in object_list %}
+            {% with object_list|next:forloop.counter0 as siguiente %}
         <!-- Intro -->
             <section id="diapositiva-{{ diapositiva.slug }}" class="diapositiva main tipo-{{ diapositiva.tipo_diapositiva.slug }} dark fullscreen {% if diapositiva.tipo_diapositiva.slug != 'intro' %}style2{% endif %} " style="background: url('{{ diapositiva.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: bottom center; background-repeat: no-repeat;">
                 <div class="content {% if diapositiva.tipo_diapositiva.slug == 'intro' %}container small{% else %}box style2{% endif %}">
@@ -11,42 +12,13 @@
                     {{ diapositiva.contenidos|safe }}
                     {% if diapositiva.tipo_diapositiva.slug == 'intro' %}
                     <footer>
-                        {% with object_list|next:forloop.counter0 as siguiente %}
                         <a href="#diapositiva-{{ siguiente.slug }}" class="button style2 down">Más</a>
-                        {% endwith %}
                     </footer>
                     {% endif %}
                 </div>
                 {% if diapositiva.tipo_diapositiva.slug != 'intro' %}
-                <a href="#two" class="button style2 down anchored">Siguiente</a>
+                <a href="#diapositiva-{{ siguiente.slug }}" class="button style2 down anchored">Siguiente</a>
                 {% endif %}
             </section>
+            {% endwith %}
         {% endfor %}        
-        <!-- One -->
-            <section id="one" class="main style2 right dark fullscreen">
-                <div class="content box style2">
-                    <header>
-                        <h2>Clases</h2>
-                    </header>
-                    <p>Lunes y Viernes 21:00 a 23:00 hs.</p>
-                    <p>Sociedad Libanesa - Necochea 538 Ciudad Mendoza</p>
-                    <p><strong>Precio</strong> $30 por clase o $200 por mes (2 clases semanales)</p>
-                    <p><strong>Informes</strong> Tel: (0261) 420-1336 - Cel: (0261) 613-1259 / 156-13-1259</p>
-                </div>
-                <a href="#two" class="button style2 down anchored">Siguiente</a>
-            </section>
-        
-        <!-- Two -->
-            <section id="two" class="main style2 left dark fullscreen">
-                <div class="content box style2">
-                    <header>
-                        <h2>Milonga de Ana y Luis</h2>
-                    </header>
-                    <p>a la Ra-Na (Belgrano y Pedro molina) - Ciudad - Mendoza. Domingos de 22:00 a 02:30hs</p>
-                    <p>Para bailar y ver bailar Tango, Vals y Milonga con la música de tu preferencia.</p>
-                    <p>El mejor servicio de Restaurant. Sorteos.</p>
-                    <p><strong>Musicaliza:</strong> Luis Nuñez</p>
-                    <p><strong>valor:</strong> $30</p>
-                </div>
-                <a href="#work" class="button style2 down anchored">Siguiente</a>
-            </section>

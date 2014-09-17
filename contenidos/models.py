@@ -8,6 +8,9 @@ from django.utils.encoding import smart_unicode
 from django.utils import timezone
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill, ResizeToFit, Adjust
+
+from django.core.urlresolvers import reverse
+
 import re
 
 # Create your models here.
@@ -79,6 +82,10 @@ class Novedad(models.Model):
         format='JPEG')
     imagen_home = ImageSpecField(
         processors=[Adjust(sharpness=1.1), ResizeToFill(2048, 1370)],
+        source='imagen',
+        format='JPEG')
+    imagen_novedad = ImageSpecField(
+        processors=[Adjust(sharpness=1.1), ResizeToFill(368, 256)],
         source='imagen',
         format='JPEG')
 

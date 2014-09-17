@@ -125,7 +125,7 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MAQUETADO_ROOT = os.path.join(BASE_DIR, "maquetado", "maqueta")
+MAQUETADO_ROOT = os.path.join(BASE_DIR, "maquetado")
 
 PAGINATE_BY = 10
 

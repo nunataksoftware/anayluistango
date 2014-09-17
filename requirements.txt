@@ -3,6 +3,7 @@ Pillow==2.5.3
 argparse==1.2.1
 django-appconf==0.6
 django-ckeditor==4.4.5
+django-file-resubmit==0.4.1
 django-imagekit==3.2.2
 django-localeurl==2.0.1
 pilkit==1.1.9

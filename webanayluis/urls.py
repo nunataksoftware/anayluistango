@@ -42,6 +42,8 @@ urlpatterns = patterns('',
 
                        url(r'^ckeditor/', include('ckeditor.urls')),
 
+                       url(r'^contenidos/', include("contenidos.urls")),
+
 
                        url(r'^$', TemplateView.as_view(
                            template_name="index.html")),

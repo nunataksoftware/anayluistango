@@ -179,7 +179,7 @@
 				width: 100%;
 			}
 			
-			.image.left {
+			.image.tipo-izquierda {
 				float: left;
 				margin: 0 2em 2em 0;
 			}
@@ -551,10 +551,10 @@
 					transform: translateZ(0);
 				}
 			
-				.main.style2.left {
+				.main.style2.tipo-izquierda {
 				}
 
-					.main.style2.left .content {
+					.main.style2.tipo-izquierda .content {
 						left: 0;
 					}
 
@@ -571,7 +571,7 @@
 					.main.style2.inactive .content {
 					}
 
-						.main.style2.inactive.left .content {
+						.main.style2.inactive.tipo-izquierda .content {
 							left: -35%;
 						}
 
@@ -748,10 +748,10 @@
 	#work {
 	}
 	
-		#work .row.img {
+		#work .row.images {
 		}
 	
-			#work .row.img .image {
+			#work .row.images .image {
 				position: relative;
 				top: 0;
 				left: 0;
@@ -770,26 +770,26 @@
 				transform: translateZ(0);
 			}
 		
-			#work .row.img.inactive {
+			#work .row.images.inactive {
 			}
 
-				#work .row.img.inactive .image {
+				#work .row.images.inactive .image {
 					opacity: 0;
 				}
 			
-				#work .row.img.inactive .image.from-left {
+				#work .row.images.inactive .image.from-left {
 					left: -14em;
 				}
 			
-				#work .row.img.inactive .image.from-right {
+				#work .row.images.inactive .image.from-right {
 					left: 14em;
 				}
 			
-				#work .row.img.inactive .image.from-top {
+				#work .row.images.inactive .image.from-top {
 					top: -7em;
 				}
 			
-				#work .row.img.inactive .image.from-bottom {
+				#work .row.images.inactive .image.from-bottom {
 					top: 7em;
 				}
 			
