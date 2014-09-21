@@ -143,6 +143,7 @@
 
 			.row > section,
 			.row > article {
+				height: 450px;
 				margin-bottom: 0;
 			}
 
@@ -599,6 +600,10 @@
 					background: #f5f6f7;
 				}
 
+		article #main {
+			padding: 6em 0 6em 0;
+		}
+
 	/* Dark */
 
 		.dark {
@@ -621,7 +626,12 @@
 				.dark .button.style2.down {
 					background-image: url('img/dark-arrow.svg');
 				}
-		
+		/* Pagination */
+		.pagination li{
+			display: inline-block;
+		}
+
+
 /*********************************************************************************/
 /* Icons                                                                         */
 /*********************************************************************************/

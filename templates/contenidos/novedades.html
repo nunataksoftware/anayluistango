@@ -3,7 +3,7 @@
         {% if object_list %}    
             <section id="novedades" class="main style3">
                 <header>
-                    <h2>{% trans "Últimas Novedades" %}</h2>
+                    <h2>{% trans "Novedades" %}</h2>
                 </header>
                 <div class="row">
                     {% for novedad in object_list %}
@@ -17,9 +17,24 @@
                     {% endfor %}
                 </div>
                 <footer class="major">
+
+                    {% if not paginado %}
                     <ul class="buttons">
                         <li><a href="{% url 'contenido-novedad-list' %}" class="button">{% trans "Ver más" %}</a></li>
                     </ul>
+                    {% else %}
+                      <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                        <li class="arrow unavailable"><a href="{% url 'contenido-novedad-list' %}?page={{ page_obj.previous_page_number }}" class="button" title="{% trans "Más nuevas" %}">&laquo;</a></li>
+                        {% endif %}
+                        <!--{% for i in page_obj.paginator.page_range %}
+                        <li class="{% ifequal i page_obj.number %}current{% endifequal %}"><a href="{% url 'contenido-novedad-list' %}?page={{ i }}" class="button">{{ i }}</a></li>
+                        {% endfor %}-->
+                        {% if page_obj.has_next %}
+                        <li class="arrow"><a href="{% url 'contenido-novedad-list' %}?page={{ page_obj.next_page_number }}" class="button" title="{% trans "Más antiguas" %}">&raquo;</a></li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
                 </footer>
             </section>
         {% endif %}

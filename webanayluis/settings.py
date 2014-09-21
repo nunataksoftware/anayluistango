@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '9^sz6@97k+@l@^i+g3f3c42i^llv#g^k1p!oa)p%m5kjc^9pk1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'debug_toolbar.apps.DebugToolbarConfig',
     'ckeditor',
     'file_resubmit',
     'imagekit',
@@ -49,6 +50,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,7 +134,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MAQUETADO_ROOT = os.path.join(BASE_DIR, "maquetado")
 
-PAGINATE_BY = 10
+PAGINATE_BY = 24
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
@@ -169,6 +171,8 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 try:
     from settings_local import *

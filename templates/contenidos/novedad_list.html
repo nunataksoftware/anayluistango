@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% load contenidos_filters %}
+
+{% block contenidos %}
+
+{% include "contenidos/novedades.html" with paginado=True %}
+
+{% endblock %}

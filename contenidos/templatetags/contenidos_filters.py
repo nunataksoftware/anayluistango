@@ -27,12 +27,15 @@ def diapositivas():
     }
 
 @register.inclusion_tag('contenidos/novedades.html')
-def novedades():
+def novedades(cantidad=False):
 
     object_list = Novedad.objects.all_language(translation.get_language())
 
+    if cantidad:
+        object_list = object_list[:cantidad]
     return {
-        'object_list': object_list[:3],
+        'object_list': object_list,
+        'paginado': False,
     }
 
 @register.inclusion_tag('contenidos/fotos.html')

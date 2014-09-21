@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% load contenidos_filters %}
+
+{% block contenidos %}
+
+    <article>
+        <header class="diapositiva main tipo-intro dark fullscreen" style="background: url('{{ object.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: top center; background-repeat: no-repeat;">
+            <h2>{{ object.titulo }}</h2>
+            <p><time pubdate="pubdate" datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date }}</time></p>
+            <div>
+                <a href="#main" class="button style2 down">{% trans "Leer" %}</a>
+            </div>
+        </header>
+
+        <section id="main" class="content container small">
+            {{ object.contenidos|safe }}
+        </section>
+    </article>
+
+{% endblock %}

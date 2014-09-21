@@ -14,9 +14,9 @@ from contenidos.models import Novedad, Album, Pagina
 # http://glitterbug.in/blog/django-class-based-generic-views-the-good-the-bad-/show/
 
 urlpatterns = patterns('',
-                       url(r'^novedades/((?P<page>\w+)/)?$', ListView.as_view(model=Novedad,
-                                                                              paginate_by=settings.PAGINATE_BY), name="contenido-novedad-list"),
-                       url(r'^albums/((?P<page>\w+)/)?$', ListView.as_view(model=Album,
+                       url(r'^novedades/((?P<page>\w+)/)?$', ExtraListView.as_view(model=Novedad,
+                                                                              paginate_by=settings.PAGINATE_BY, extra_context={}), name="contenido-novedad-list"),
+                       url(r'^albums/((?P<page>\w+)/)?$', ExtraListView.as_view(model=Album,
                                                                            paginate_by=settings.PAGINATE_BY), name="contenido-album-list"),
 
                        url(r'^novedad/(?P<slug>[-_\w]+)/$', ExtraDetailView.as_view(
