@@ -1,3 +1,5 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% load contenidos_filters %}
 
@@ -12,12 +14,12 @@
                     {{ diapositiva.contenidos|safe }}
                     {% if diapositiva.tipo_diapositiva.slug == 'intro' %}
                     <footer>
-                        <a href="#diapositiva-{{ siguiente.slug }}" class="button style2 down">Más</a>
+                        <a href="#diapositiva-{{ siguiente.slug }}" class="button style2 down">{% trans "Más" %}</a>
                     </footer>
                     {% endif %}
                 </div>
                 {% if diapositiva.tipo_diapositiva.slug != 'intro' %}
-                <a href="#diapositiva-{{ siguiente.slug }}" class="button style2 down anchored">Siguiente</a>
+                <a href="#diapositiva-{{ siguiente.slug }}" class="button style2 down anchored">{% trans "Siguiente" %}</a>
                 {% endif %}
             </section>
             {% endwith %}

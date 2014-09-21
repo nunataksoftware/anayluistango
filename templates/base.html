@@ -5,11 +5,13 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
     <head>
-        <title>Ana y Luis, Tango en Mendoza</title>
+        <title>{% trans "Ana y Luis, Tango en Mendoza" %}</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <meta name="description" content="{% trans "Ana y Luis, profesores de Tango y Milonga, y organizadores de eventos relacionados con el Tango en Mendoza." %}" />
+        <meta name="keywords" content="{% trans "tango, mendoza, milonga, ana y luis, vals, argentina, clases, profesores, TANGO, MENDOZA, MILONGA, ANA Y LUIS, VALS, ARGENTINA, CLASES, PROFESORES" %}" />
         <!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
         <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.poptrox.min.js"></script>
@@ -26,15 +28,13 @@
         <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
     </head>
     <body>
-    {% load i18n %}
-    {% get_current_language as LANGUAGE_CODE %}
 
     {% load contenidos_filters %}
         <!-- Header -->
             <header id="header">
 
                 <!-- Logo -->
-                    <h1 id="logo">Ana y Luis, Tango en Mendoza</h1>
+                    <h1 id="logo">{% trans "Ana y Luis, Tango en Mendoza" %}</h1>
                 
                     {% menu %}
             </header>
@@ -49,24 +49,24 @@
             <section id="contact" class="main style3 secondary">
                 <div class="content container">
                     <header>
-                        <h2>Contacto</h2>
-                        <p>Para reservas o consultas, por favor, complete el formulario de abajo, o envíenos un correo a <a href="mailto:info@anayluistango.com.ar">info@anayluistango.com.ar</a> o alternativamente a los teléfonos +54 261 4201336 o +54 9 261 156 13 1259</p>
+                        <h2>{% trans "Contacto" %}</h2>
+                        <p>{% blocktrans %}Para reservas o consultas, por favor, complete el formulario de abajo, o envíenos un correo a <a href="mailto:info@anayluistango.com.ar">info@anayluistango.com.ar</a> o alternativamente a los teléfonos +54 261 4201336 o +54 9 261 156 13 1259{% endblocktrans %}</p>
                     </header>
                     <div class="box container small">
                     
                     <!-- Contact Form -->
                             <form method="post" action="#">
                                 <div class="row half">
-                                    <div class="6u"><input type="text" name="name" placeholder="Nombre" /></div>
-                                    <div class="6u"><input type="email" name="email" placeholder="Email" /></div>
+                                    <div class="6u"><input type="text" name="name" placeholder="{% trans "Nombre" %}" /></div>
+                                    <div class="6u"><input type="email" name="email" placeholder="{% trans "Email" %}" /></div>
                                 </div>
                                 <div class="row half">
-                                    <div class="12u"><textarea name="message" placeholder="Mensaje" rows="6"></textarea></div>
+                                    <div class="12u"><textarea name="message" placeholder="{% trans "Mensaje" %}" rows="6"></textarea></div>
                                 </div>
                                 <div class="row">
                                     <div class="12u">
                                         <ul class="actions">
-                                            <li><input type="submit" value="Enviar Mensaje" /></li>
+                                            <li><input type="submit" value="{% trans "Enviar Mensaje" %}" /></li>
                                         </ul>
                                     </div>
                                 </div>

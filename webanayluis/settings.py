@@ -93,6 +93,11 @@ LANGUAGE_CODE = 'es'
 LANGUAGES = (('es', u'Español'),
              ('en', u'English'),)
 
+LOCALE_PATHS = (
+    os.path.join(os.path.dirname(BASE_DIR), 'locale'),
+    'locale'
+)
+
 TIME_ZONE = 'America/Argentina/Mendoza'
 
 USE_I18N = True

@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ana y Luis Tango\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-20 23:29-0300\n"
+"PO-Revision-Date: 2014-09-20 23:38-0300\n"
+"Last-Translator: Guillermo Nuñez <gui.nunez@gmail.com>\n"
+"Language-Team: Nunatak Software <guillermo@nunataksoftware.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: templates/base.html:11 templates/base.html.py:37
+msgid "Ana y Luis, Tango en Mendoza"
+msgstr "Ana & Luis, Tango in Mendoza"
+
+#: templates/base.html:13
+msgid ""
+"Ana y Luis, profesores de Tango y Milonga, y organizadores de eventos "
+"relacionados con el Tango en Mendoza."
+msgstr ""
+"Ana & Luis, Tango and Milonga teachers, event organizers regarding Tango in "
+"Mendoza."
+
+#: templates/base.html:14
+msgid ""
+"tango, mendoza, milonga, ana y luis, vals, argentina, clases, profesores, "
+"TANGO, MENDOZA, MILONGA, ANA Y LUIS, VALS, ARGENTINA, CLASES, PROFESORES"
+msgstr ""
+"tango, mendoza, milonga, ana y luis, ana & luis, vals, argentina, lessons, "
+"teachers, TANGO, MENDOZA, MILONGA, ANA Y LUIS, ANA & LUIS, VALS, ARGENTINA, "
+"LESSONS, TEACHERS"
+
+#: templates/base.html:52 templates/menu.html:18
+msgid "Contacto"
+msgstr "Contact"
+
+#: templates/base.html:53
+msgid ""
+"Para reservas o consultas, por favor, complete el formulario de abajo, o "
+"envíenos un correo a <a href=\"mailto:info@anayluistango.com.ar"
+"\">info@anayluistango.com.ar</a> o alternativamente a los teléfonos +54 261 "
+"4201336 o +54 9 261 156 13 1259"
+msgstr ""
+"For reservations and questions, please complete the form below, or send us "
+"an e-mail to <a href=\"mailto:info@anayluistango.com.ar\">info@anayluistango."
+"com.ar</a>, or contact us by phone to +54 261 4201336 or +54 9 261 156 13 "
+"1259"
+
+#: templates/base.html:60
+msgid "Nombre"
+msgstr "Name"
+
+#: templates/base.html:61
+msgid "Email"
+msgstr "Email"
+
+#: templates/base.html:64
+msgid "Mensaje"
+msgstr "Message"
+
+#: templates/base.html:69
+msgid "Enviar Mensaje"
+msgstr "Send Message"
+
+#: templates/contenidos/diapositivas.html:17
+msgid "Más"
+msgstr "More"
+
+#: templates/contenidos/diapositivas.html:22
+msgid "Siguiente"
+msgstr "Next"
+
+#: templates/contenidos/fotos.html:9
+msgid "Últimas Fotos"
+msgstr "Latest Photos"
+
+#: templates/contenidos/fotos.html:31 templates/contenidos/novedades.html:21
+msgid "Ver más"
+msgstr "See more"
+
+#: templates/contenidos/novedades.html:6
+msgid "Últimas Novedades"
+msgstr "Latest News"

@@ -1,9 +1,12 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
         {% if album %}
         <!-- Work -->
             <section id="fotos" class="main style3 primary">
                 <div class="content container">
                     <header>
-                        <h2>Últimas Fotos</h2>
+                        <h2>{% trans "Últimas Fotos" %}</h2>
                         <h3>{{ album.titulo }}</h3>
                         {{ album.descripcion|safe }}
                     </header>
@@ -25,7 +28,7 @@
                 </div>
                 <footer class="major">
                     <ul class="buttons">
-                        <li><a href="https://www.facebook.com/anayluistango/photos_all" class="button" target="_blank">Ver más</a></li>
+                        <li><a href="https://www.facebook.com/anayluistango/photos_all" class="button" target="_blank">{% trans "Ver más" %}</a></li>
                     </ul>
                 </footer>
             </section>

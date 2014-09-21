@@ -1,7 +1,9 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
         {% if object_list %}    
             <section id="novedades" class="main style3">
                 <header>
-                    <h2>Últimas Novedades</h2>
+                    <h2>{% trans "Últimas Novedades" %}</h2>
                 </header>
                 <div class="row">
                     {% for novedad in object_list %}
@@ -16,7 +18,7 @@
                 </div>
                 <footer class="major">
                     <ul class="buttons">
-                        <li><a href="{% url 'contenido-novedad-list' %}" class="button">Ver más</a></li>
+                        <li><a href="{% url 'contenido-novedad-list' %}" class="button">{% trans "Ver más" %}</a></li>
                     </ul>
                 </footer>
             </section>
