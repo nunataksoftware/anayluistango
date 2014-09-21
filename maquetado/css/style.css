@@ -746,13 +746,13 @@
 /* Work                                                                          */
 /*********************************************************************************/
 
-	#work {
+	#fotos {
 	}
 	
-		#work .row.images {
+		#fotos .row.images {
 		}
 	
-			#work .row.images .image {
+			#fotos .row.images .image {
 				position: relative;
 				top: 0;
 				left: 0;
@@ -771,26 +771,26 @@
 				transform: translateZ(0);
 			}
 		
-			#work .row.images.inactive {
+			#fotos .row.images.inactive {
 			}
 
-				#work .row.images.inactive .image {
+				#fotos .row.images.inactive .image {
 					opacity: 0;
 				}
 			
-				#work .row.images.inactive .image.from-left {
+				#fotos .row.images.inactive .image.from-left {
 					left: -14em;
 				}
 			
-				#work .row.images.inactive .image.from-right {
+				#fotos .row.images.inactive .image.from-right {
 					left: 14em;
 				}
 			
-				#work .row.images.inactive .image.from-top {
+				#fotos .row.images.inactive .image.from-top {
 					top: -7em;
 				}
 			
-				#work .row.images.inactive .image.from-bottom {
+				#fotos .row.images.inactive .image.from-bottom {
 					top: 7em;
 				}
 			

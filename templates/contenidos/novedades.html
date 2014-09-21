@@ -1,4 +1,5 @@
-            <section id="diapositiva-novedades" class="main style3">
+        {% if object_list %}    
+            <section id="novedades" class="main style3">
                 <header>
                     <h2>Últimas Novedades</h2>
                 </header>
@@ -19,3 +20,4 @@
                     </ul>
                 </footer>
             </section>
+        {% endif %}

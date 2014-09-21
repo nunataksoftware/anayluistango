@@ -16,6 +16,12 @@ import re
 # Create your models here.
 
 
+class ContenidoManager(models.Manager):
+
+    def all_language(self, language):
+        return self.filter(idioma__codigo=language)
+
+
 class Idioma(models.Model):
     titulo = models.CharField(max_length=200)
     codigo = models.CharField(max_length=5)
@@ -57,6 +63,8 @@ class Diapositiva(models.Model):
     tipo_diapositiva = models.ForeignKey(TipoDiapositiva)
     idioma = models.ForeignKey(Idioma)
 
+    objects = ContenidoManager()
+
     def save(self, **kwargs):
         slug_str = "%s" % (self.titulo)
         utilerias.unique_slugify(self, slug_str)
@@ -91,6 +99,8 @@ class Novedad(models.Model):
 
     idioma = models.ForeignKey(Idioma)
 
+    objects = ContenidoManager()
+
     def get_absolute_url(self):
 
         return reverse('contenido-novedad-detalle', kwargs={'slug': self.slug})
@@ -116,9 +126,11 @@ class Album(models.Model):
     titulo = models.CharField(max_length=200)
     slug = models.SlugField(
         max_length=60, blank=True, null=True, editable=False)
-    descripcion = models.TextField(blank=True, null=True)
+    descripcion = RichTextField(blank=True, null=True)
     pub_date = models.DateTimeField('fecha publicada', editable=False)
     idioma = models.ForeignKey(Idioma)
+
+    objects = ContenidoManager()
 
     def save(self, **kwargs):
         slug_str = "%s" % (self.titulo)
@@ -142,8 +154,12 @@ class Foto(models.Model):
         processors=[Adjust(sharpness=1.1), ResizeToFill(50, 50)],
         source='imagen',
         format='JPEG')
+    imagen_home_miniatura = ImageSpecField(
+        processors=[Adjust(sharpness=1.1), ResizeToFill(440, 276)],
+        source='imagen',
+        format='JPEG')
     imagen_home = ImageSpecField(
-        processors=[Adjust(sharpness=1.1), ResizeToFill(2048, 1370)],
+        processors=[Adjust(sharpness=1.1), ResizeToFit(2048)],
         source='imagen',
         format='JPEG')
 
@@ -159,7 +175,7 @@ class Foto(models.Model):
         return smart_unicode(self.titulo)
 
     class Meta:
-        ordering = ['-pub_date', ]
+        ordering = ['importancia', '-pub_date', ]
 
 
 class Pagina(models.Model):
@@ -168,6 +184,8 @@ class Pagina(models.Model):
         max_length=60, blank=True, null=True, editable=False)
     contenidos = RichTextField(blank=True, null=True)
     idioma = models.ForeignKey(Idioma)
+
+    objects = ContenidoManager()
 
     def get_absolute_url(self):
 

@@ -1,0 +1,32 @@
+        {% if album %}
+        <!-- Work -->
+            <section id="fotos" class="main style3 primary">
+                <div class="content container">
+                    <header>
+                        <h2>Últimas Fotos</h2>
+                        <h3>{{ album.titulo }}</h3>
+                        {{ album.descripcion|safe }}
+                    </header>
+                    
+                    <!-- Lightbox Gallery  -->
+                        <div class="container small gallery">
+                        {% for foto in album.foto_set.all %}
+
+                            {% if forloop.counter0|divisibleby:"2" %}
+                            <div class="row flush images">
+                            {% endif %}
+                                <div class="6u"><a href="{{ foto.imagen_home.url }}" class="image fit {% if forloop.counter0|divisibleby:"2" %}from-left{% else %}from-right{% endif %}"><img src="{{ foto.imagen_home_miniatura.url }}" title="{{ foto.titulo }}" alt="{{ foto.titulo }}" /></a></div>
+                            {% if forloop.counter|divisibleby:"2" or forloop.last %}
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+
+                </div>
+                <footer class="major">
+                    <ul class="buttons">
+                        <li><a href="https://www.facebook.com/anayluistango/photos_all" class="button" target="_blank">Ver más</a></li>
+                    </ul>
+                </footer>
+            </section>
+        {% endif %}

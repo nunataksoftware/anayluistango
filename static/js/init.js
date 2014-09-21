@@ -145,7 +145,7 @@
 						});
 			
 				// Work.
-					$('#work')
+					$('#fotos')
 						.scrollwatch({
 							delay:		25,
 							range:		0.6,
@@ -214,7 +214,7 @@
 										.scrollwatchSuspend();
 							
 								// Work.
-									$('#work')
+									$('#fotos')
 										.scrollwatchSuspend();
 
 								// Contact.
@@ -232,7 +232,7 @@
 										.scrollwatchResume();
 							
 								// Work.
-									$('#work')
+									$('#fotos')
 										.scrollwatchResume();
 
 								// Contact.

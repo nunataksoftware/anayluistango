@@ -90,8 +90,8 @@ CACHES = {
 
 LANGUAGE_CODE = 'es'
 
-LANGUAGES = (('es', 'Spanish'),
-             ('en', 'English'),)
+LANGUAGES = (('es', u'Español'),
+             ('en', u'English'),)
 
 TIME_ZONE = 'America/Argentina/Mendoza'
 

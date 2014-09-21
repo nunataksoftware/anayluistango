@@ -1,0 +1,20 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as languages %}
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            {% for diapositiva in diapositivas %}
+                            <li><a href="#diapositiva-{{ diapositiva.slug }}">{{ diapositiva.titulo }}</a></li>
+                            {% endfor %}
+                            {% if hay_novedades %}<li><a href="#novedades">Novedades</a></li>{% endif %}
+                            {% if hay_album %}<li><a href="#fotos">Fotos</a></li>{% endif %}
+                            {% for lang_code, lang_name in idiomas %}
+                            {% if LANGUAGE_CODE != lang_code %}
+                            <li><a href="/{{ lang_code }}">{{ lang_name }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+
+                            <li><a href="#contact">Contacto</a></li>
+                        </ul>
+                    </nav>
