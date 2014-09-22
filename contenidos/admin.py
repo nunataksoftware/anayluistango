@@ -14,6 +14,21 @@ class DiapositivaAdmin(AdminResubmitMixin, admin.ModelAdmin):
     list_filter = ['idioma']
     list_editable = ['importancia']
 
+
+@admin.register(Novedad)
+class NovedadAdmin(AdminResubmitMixin, admin.ModelAdmin):
+    admin_thumbnail = AdminThumbnail(image_field='imagen_miniatura')
+    list_display = ('titulo', 'slug', 'idioma', 'pub_date', 'admin_thumbnail')
+    list_filter = ['idioma']
+
+@admin.register(Pagina)
+class PaginaAdmin(AdminResubmitMixin, admin.ModelAdmin):
+    list_display = ('titulo', 'slug', 'idioma', 'url')
+    list_filter = ['idioma']
+
+    def url(self, obj):
+        return '/contenidos/pagina/%s/' % obj.slug 
+
 class FotoInline(admin.TabularInline):
     model = Foto
 
@@ -28,8 +43,8 @@ class AlbumAdmin(AdminResubmitMixin, admin.ModelAdmin):
 
 
 # admin.site.register(Diapositiva, DiapositivaAdmin)
-admin.site.register(Novedad)
-admin.site.register(Pagina)
+# admin.site.register(Novedad)
+# admin.site.register(Pagina)
 # admin.site.register(Album)
 # admin.site.register(TipoDiapositiva)
 # admin.site.register(Idioma)
