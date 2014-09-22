@@ -4,6 +4,8 @@
 
 {% load contenidos_filters %}
 
+{% block pagetitle %}{% trans "Novedades" %}{% endblock %}
+
 {% block contenidos %}
 
 {% include "contenidos/novedades.html" with paginado=True %}

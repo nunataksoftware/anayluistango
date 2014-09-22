@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block pagetitle %}{% trans "Contacto Realizado" %}{% endblock %}
+{% block contenidos %}
+    <section class="main style3">
+        <article id="contact-sent">
+                <strong>{% trans "Gracias!" %}</strong>
+                <p>{% trans "Su mensaje ha sido enviado exitosamente, le responderemos a la brevedad posible." %}</p>
+        </article>
+    </section>
+{% endblock %}

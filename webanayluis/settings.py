@@ -31,6 +31,12 @@ ALLOWED_HOSTS = ['ww2.anayluistango.com.ar', 'www.anayluistango.com.ar',
                  'anayluistango.com.ar', '127.0.0.1', 'localhost']
 
 
+ADMINS = (
+    (u'Guillermo Nuñez', 'gui.nunez@gmail.com'),
+)
+
+MANAGERS = ADMINS
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -43,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'debug_toolbar.apps.DebugToolbarConfig',
+    'contact_form',
     'ckeditor',
     'file_resubmit',
     'imagekit',
@@ -87,6 +94,8 @@ CACHES = {
 }
 
 
+INTERNAL_IPS = ("127.0.0.1",)
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -120,6 +129,7 @@ LOCALE_INDEPENDENT_PATHS = (
     r'^/media/',
     r'^/maquetado/',
     r'^/files/',
+    #r'^/contacto/',
 )
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
@@ -170,6 +180,14 @@ CKEDITOR_CONFIGS = {
         'youtube_width': '617',
     },
 }
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'server.salida.mendoza'
+EMAIL_HOST_PASSWORD = 'UxtyYFf0'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'server.salida.mendoza@gmail.com'
 
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False

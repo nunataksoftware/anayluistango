@@ -10,9 +10,6 @@ import os
 from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
-                       # Examples:
-                       # url(r'^$', 'webanayluis.views.home', name='home'),
-                       # url(r'^blog/', include('blog.urls')),
 
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
@@ -43,7 +40,7 @@ urlpatterns = patterns('',
                        url(r'^ckeditor/', include('ckeditor.urls')),
 
                        url(r'^contenidos/', include("contenidos.urls")),
-
+                       url(r'^contacto/', include('contact_form.urls')),
 
                        url(r'^$', TemplateView.as_view(
                            template_name="index.html")),

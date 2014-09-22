@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% load contenidos_filters %}
+
+{% block pagetitle %}{{ object.titulo }}{% endblock %}
+
+{% block contenidos %}
+
+    <article id="main" class="content container small pagina">
+            <h2>{{ object.titulo }}</h2>
+            {{ object.contenidos|safe }}
+    </article>
+
+{% endblock %}

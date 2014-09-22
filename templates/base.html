@@ -8,7 +8,7 @@
     {% load i18n %}
     {% get_current_language as LANGUAGE_CODE %}
     <head>
-        <title>{% trans "Ana y Luis, Tango en Mendoza" %}</title>
+        <title>{% trans "Ana y Luis, Tango en Mendoza" %} - {% block pagetitle %}Home{% endblock %}</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="{% trans "Ana y Luis, profesores de Tango y Milonga, y organizadores de eventos relacionados con el Tango en Mendoza." %}" />
         <meta name="keywords" content="{% trans "tango, mendoza, milonga, ana y luis, vals, argentina, clases, profesores, TANGO, MENDOZA, MILONGA, ANA Y LUIS, VALS, ARGENTINA, CLASES, PROFESORES" %}" />
@@ -55,22 +55,24 @@
                     <div class="box container small">
                     
                     <!-- Contact Form -->
-                            <form method="post" action="#">
-                                <div class="row half">
-                                    <div class="6u"><input type="text" name="name" placeholder="{% trans "Nombre" %}" /></div>
-                                    <div class="6u"><input type="email" name="email" placeholder="{% trans "Email" %}" /></div>
+                        <form method="POST" action="{% url "contact_form" %}">{% csrf_token %}
+                            {{ form.non_field_errors }}
+                            <div class="row half">
+                                <div class="6u"><input type="text" name="name" placeholder="{% trans "Nombre" %}"  value="{% if form.name.value %}{{ form.name.value }}{% endif %}" required /><p>{{ form.name.errors }}</p></div>
+
+                                <div class="6u"><input type="email" name="email" placeholder="{% trans "Email" %}"  value="{% if form.email.value %}{{ form.email.value }}{% endif %}" required /><p>{{ form.email.errors }}</p></div>
+                            </div>
+                            <div class="row half">
+                                <div class="12u"><textarea placeholder="{% trans "Mensaje" %}" rows="6" name="body" required>{% if form.body.value %}{{ form.body.value }}{% endif %}</textarea><p>{{ form.body.errors }}</p></div>
+                            </div>
+                            <div class="row">
+                                <div class="12u">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="{% trans "Enviar Mensaje" %}" /></li>
+                                    </ul>
                                 </div>
-                                <div class="row half">
-                                    <div class="12u"><textarea name="message" placeholder="{% trans "Mensaje" %}" rows="6"></textarea></div>
-                                </div>
-                                <div class="row">
-                                    <div class="12u">
-                                        <ul class="actions">
-                                            <li><input type="submit" value="{% trans "Enviar Mensaje" %}" /></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+                        </form>
 
                     </div>
                 </div>
