@@ -46,6 +46,6 @@ class AlbumAdmin(AdminResubmitMixin, admin.ModelAdmin):
 # admin.site.register(Novedad)
 # admin.site.register(Pagina)
 # admin.site.register(Album)
-# admin.site.register(TipoDiapositiva)
-# admin.site.register(Idioma)
+admin.site.register(TipoDiapositiva)
+admin.site.register(Idioma)
 
