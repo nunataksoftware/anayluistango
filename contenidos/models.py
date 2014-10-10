@@ -13,8 +13,17 @@ from django.core.urlresolvers import reverse
 
 import re
 
-# Create your models here.
 
+ARRIBA = 'top'
+CENTRO = 'center'
+ABAJO = 'bottom'
+POSICIONES_CHOICES = (
+    (ARRIBA, 'Arriba'),
+    (CENTRO, 'Al centro'),
+    (ABAJO, 'Abajo'),
+)
+
+# Create your models here.
 
 class ContenidoManager(models.Manager):
 
@@ -45,6 +54,9 @@ class TipoDiapositiva(models.Model):
 
 
 class Diapositiva(models.Model):
+
+
+
     titulo = models.CharField(max_length=200)
     slug = models.SlugField(
         max_length=60, blank=True, null=True, editable=False)
@@ -59,6 +71,10 @@ class Diapositiva(models.Model):
         processors=[Adjust(sharpness=1.1), ResizeToFill(2048, 1370)],
         source='imagen',
         format='JPEG')
+
+    posicion_imagen = models.CharField(max_length=12,
+                                      choices=POSICIONES_CHOICES,
+                                      default=ABAJO)
 
     tipo_diapositiva = models.ForeignKey(TipoDiapositiva)
     idioma = models.ForeignKey(Idioma)

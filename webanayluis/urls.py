@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
@@ -46,6 +48,11 @@ urlpatterns = patterns('',
                            template_name="index.html")),
 
                        )
+
+
+admin.site.site_title = u'Administración del sitio AnayLuisTango.com.ar'
+admin.site.site_header = u'Administración de Ana y Luis'
+admin.site.index_title = u'Administración del Sitio Ana y Luis'
 
 # if settings.DEBUG:
 #     import debug_toolbar

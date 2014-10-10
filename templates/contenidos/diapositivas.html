@@ -6,7 +6,7 @@
         {% for diapositiva in object_list %}
             {% with object_list|next:forloop.counter0 as siguiente %}
         <!-- Intro -->
-            <section id="diapositiva-{{ diapositiva.slug }}" class="diapositiva main tipo-{{ diapositiva.tipo_diapositiva.slug }} dark fullscreen {% if diapositiva.tipo_diapositiva.slug != 'intro' %}style2{% endif %} " style="background: url('{{ diapositiva.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: bottom center; background-repeat: no-repeat;">
+            <section id="diapositiva-{{ diapositiva.slug }}" class="diapositiva main tipo-{{ diapositiva.tipo_diapositiva.slug }} dark fullscreen {% if diapositiva.tipo_diapositiva.slug != 'intro' %}style2{% endif %} " style="background: url('{{ diapositiva.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: {{ diapositiva.posicion_imagen }} center; background-repeat: no-repeat;">
                 <div class="content {% if diapositiva.tipo_diapositiva.slug == 'intro' %}container small{% else %}box style2{% endif %}">
                     <header>
                         <h2>{{ diapositiva.titulo }}</h2>
