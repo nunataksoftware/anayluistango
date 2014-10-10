@@ -35,7 +35,7 @@ nosetests.xml
 coverage.xml
 
 # Translations
-*.mo
+#*.mo
 
 # Mr Developer
 .mr.developer.cfg
@@ -47,7 +47,7 @@ coverage.xml
 
 # Django stuff:
 *.log
-#*.pot
+*.pot
 
 # Sphinx documentation
 docs/_build/
