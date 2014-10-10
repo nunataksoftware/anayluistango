@@ -7,7 +7,7 @@ a web interface, and a subclass demonstrating useful functionality.
 
 from django import forms
 from django.conf import settings
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 from django.template import loader
 from django.template import RequestContext
 from django.contrib.sites.models import RequestSite
@@ -61,7 +61,7 @@ class ContactForm(forms.Form):
       ``From:`` header of the message. The base implementation returns
       the value of the ``DEFAULT_FROM_EMAIL`` setting.
 
-    * ``message`` -- used to get the message body as a string. The
+    * ``body`` -- used to get the message body as a string. The
       base implementation renders a template using the form's
       ``cleaned_data`` dictionary as context.
 
@@ -79,11 +79,11 @@ class ContactForm(forms.Form):
       message. Default is ``contact_form/contact_form.txt``.
 
     Internally, the base implementation ``_get_message_dict`` method
-    collects ``from_email``, ``message``, ``to`` and
+    collects ``from_email``, ``body``, ``to`` and
     ``subject`` into a dictionary, which the ``save`` method then
     passes directly to ``send_mail`` as keyword arguments.
 
-    Particularly important is the ``message`` attribute, with its base
+    Particularly important is the ``body`` attribute, with its base
     implementation as a method which renders a template; because it
     passes ``cleaned_data`` as the template context, any additional
     fields added by a subclass will automatically be available in the
@@ -135,7 +135,7 @@ class ContactForm(forms.Form):
                            label=_(u'Your name'))
     email = forms.EmailField(max_length=200,
                              label=_(u'Your email address'))
-    body = forms.CharField(widget=forms.Textarea,
+    message = forms.CharField(widget=forms.Textarea,
                               label=_(u'Your message'))
     
     from_email = settings.DEFAULT_FROM_EMAIL
@@ -223,7 +223,6 @@ class ContactForm(forms.Form):
         Build and send the email message.
         
         """
-        #send_mail(fail_silently=fail_silently, **self.get_message_dict())
         print self.cleaned_data['email']
         msg = EmailMessage(headers = {'Reply-To': self.cleaned_data['email']}, **self.get_message_dict())
-        msg.send()
+        msg.send(fail_silently=fail_silently)

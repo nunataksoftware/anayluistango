@@ -63,7 +63,7 @@
                                 <div class="6u"><input type="email" name="email" placeholder="{% trans "Email" %}"  value="{% if form.email.value %}{{ form.email.value }}{% endif %}" required /><p>{{ form.email.errors }}</p></div>
                             </div>
                             <div class="row half">
-                                <div class="12u"><textarea placeholder="{% trans "Mensaje" %}" rows="6" name="body" required>{% if form.body.value %}{{ form.body.value }}{% endif %}</textarea><p>{{ form.body.errors }}</p></div>
+                                <div class="12u"><textarea placeholder="{% trans "Mensaje" %}" rows="6" name="message" required>{% if form.message.value %}{{ form.message.value }}{% endif %}</textarea><p>{{ form.message.errors }}</p></div>
                             </div>
                             <div class="row">
                                 <div class="12u">

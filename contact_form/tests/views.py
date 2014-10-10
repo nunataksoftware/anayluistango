@@ -28,7 +28,7 @@ class ViewTests(TestCase):
         contact_url = reverse('contact_form')
         data = {'name': 'Test',
                 'email': 'test@example.com',
-                'body': 'Test message'}
+                'message': 'Test message'}
         
         response = self.client.post(contact_url,
                                 data=data)
@@ -41,7 +41,7 @@ class ViewTests(TestCase):
         message = mail.outbox[0]
         self.assertEqual([data['email']],
                          message.recipients())
-        self.assertTrue(data['body'] in message.body)
+        self.assertTrue(data['message'] in message.body)
         self.assertEqual(settings.DEFAULT_FROM_EMAIL,
                          message.from_email)
 
@@ -53,7 +53,7 @@ class ViewTests(TestCase):
         """
         contact_url = reverse('contact_form')
         data = {'name': 'Test',
-                'body': 'Test message'}
+                'message': 'Test message'}
         
         response = self.client.post(contact_url,
                                     data=data)

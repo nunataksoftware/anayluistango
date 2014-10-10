@@ -3,70 +3,61 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ana y Luis Tango\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-10 13:09-0300\n"
-"PO-Revision-Date: 2014-10-10 13:14-0300\n"
-"Last-Translator: Guillermo Nuñez <gui.nunez@gmail.com>\n"
-"Language-Team: Nunatak Software <guillermo@nunataksoftware.com>\n"
-"Language: en\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: templates/404.html:12
 msgid "Error 404"
-msgstr "404 Error"
+msgstr ""
 
 #: templates/404.html:13
 msgid ""
 "Página no encontrada. Lá página que está buscando ya no se encuentra "
 "disponible, pruebe volviendo al <a href=\"/\">sitio principal</a>"
 msgstr ""
-"Page not found. The page that you are looking for is not available any more, "
-"try going back to our <a href=\"/\">home page</a>"
 
 #: templates/500.html:12
 msgid "Error 500"
-msgstr "500 Error"
+msgstr ""
 
 #: templates/500.html:13
 msgid ""
 "Ha ocurrido un error interno en el sitio, los administradores ya han sido "
 "notificados. Por favor, intente volver más tarde"
 msgstr ""
-"There has been an internal error on our site, the administrators have been "
-"notified. Please, try again later."
 
 #: templates/base.html:11 templates/base.html.py:37
 msgid "Ana y Luis, Tango en Mendoza"
-msgstr "Ana & Luis, Tango in Mendoza"
+msgstr ""
 
 #: templates/base.html:13
 msgid ""
 "Ana y Luis, profesores de Tango y Milonga, y organizadores de eventos "
 "relacionados con el Tango en Mendoza."
 msgstr ""
-"Ana & Luis, Tango and Milonga teachers, event organizers regarding Tango in "
-"Mendoza."
 
 #: templates/base.html:14
 msgid ""
 "tango, mendoza, milonga, ana y luis, vals, argentina, clases, profesores, "
 "TANGO, MENDOZA, MILONGA, ANA Y LUIS, VALS, ARGENTINA, CLASES, PROFESORES"
 msgstr ""
-"tango, mendoza, milonga, ana y luis, ana & luis, vals, argentina, lessons, "
-"teachers, TANGO, MENDOZA, MILONGA, ANA Y LUIS, ANA & LUIS, VALS, ARGENTINA, "
-"LESSONS, TEACHERS"
 
 #: templates/base.html:52 templates/contact_form/contact_form.html:5
 #: templates/menu.html:18
 msgid "Contacto"
-msgstr "Contact"
+msgstr ""
 
 #: templates/base.html:53
 msgid ""
@@ -75,74 +66,66 @@ msgid ""
 "\">info@anayluistango.com.ar</a> o alternativamente a los teléfonos +54 261 "
 "4201336 o +54 9 261 156 13 1259"
 msgstr ""
-"For reservations and questions, please complete the form below, or send us "
-"an e-mail to <a href=\"mailto:info@anayluistango.com.ar\">info@anayluistango."
-"com.ar</a>, or contact us by phone to +54 261 4201336 or +54 9 261 156 13 "
-"1259"
 
 #: templates/base.html:61
 msgid "Nombre"
-msgstr "Name"
+msgstr ""
 
 #: templates/base.html:63
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: templates/base.html:66
 msgid "Mensaje"
-msgstr "Message"
+msgstr ""
 
 #: templates/base.html:71
 msgid "Enviar Mensaje"
-msgstr "Send Message"
+msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:4
-#| msgid "Contacto"
 msgid "Contacto Realizado"
-msgstr "Contact Sent"
+msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:8
 msgid "Gracias!"
-msgstr "Thanks!"
+msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:9
 msgid ""
 "Su mensaje ha sido enviado exitosamente, le responderemos a la brevedad "
 "posible."
 msgstr ""
-"Your message has been successfully sent, we'll be answering you as soon as "
-"possible."
 
 #: templates/contenidos/diapositivas.html:17
 msgid "Más"
-msgstr "More"
+msgstr ""
 
 #: templates/contenidos/diapositivas.html:22
 msgid "Siguiente"
-msgstr "Next"
+msgstr ""
 
 #: templates/contenidos/fotos.html:9
 msgid "Últimas Fotos"
-msgstr "Latest Photos"
+msgstr ""
 
 #: templates/contenidos/fotos.html:31 templates/contenidos/novedades.html:23
 msgid "Ver más"
-msgstr "See more"
+msgstr ""
 
 #: templates/contenidos/novedad_detail.html:16
 msgid "Leer"
-msgstr "Read"
+msgstr ""
 
 #: templates/contenidos/novedad_list.html:7
 #: templates/contenidos/novedades.html:6
-#| msgid "Últimas Novedades"
 msgid "Novedades"
-msgstr "News"
+msgstr ""
 
 #: templates/contenidos/novedades.html:28
 msgid "Más nuevas"
-msgstr "More recent"
+msgstr ""
 
 #: templates/contenidos/novedades.html:34
 msgid "Más antiguas"
-msgstr "Older"
+msgstr ""
