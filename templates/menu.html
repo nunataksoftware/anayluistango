@@ -5,10 +5,10 @@
                     <nav id="nav">
                         <ul>
                             {% for diapositiva in diapositivas %}
-                            <li><a href="/#diapositiva-{{ diapositiva.slug }}">{{ diapositiva.titulo }}</a></li>
+                            <li><a href="/{{ LANGUAGE_CODE }}/#diapositiva-{{ diapositiva.slug }}">{{ diapositiva.titulo }}</a></li>
                             {% endfor %}
-                            {% if hay_novedades %}<li><a href="/#novedades">Novedades</a></li>{% endif %}
-                            {% if hay_album %}<li><a href="/#fotos">Fotos</a></li>{% endif %}
+                            {% if hay_novedades %}<li><a href="/{{ LANGUAGE_CODE }}/#novedades">Novedades</a></li>{% endif %}
+                            {% if hay_album %}<li><a href="/{{ LANGUAGE_CODE }}/#fotos">Fotos</a></li>{% endif %}
                             {% for lang_code, lang_name in idiomas %}
                             {% if LANGUAGE_CODE != lang_code %}
                             <li><a href="/{{ lang_code }}">{{ lang_name }}</a></li>
