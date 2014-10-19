@@ -10,7 +10,8 @@
 
     <article>
         <header class="diapositiva main tipo-intro dark fullscreen" style="background: url('{{ object.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: top center; background-repeat: no-repeat;">
-            <h2>{{ object.titulo }}</h2>
+            <h2>{{ object.titulo }}</h2>{% url_to_edit_object user object %}
+
             <p><time pubdate="pubdate" datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date }}</time></p>
             <div>
                 <a href="#main" class="button style2 down">{% trans "Leer" %}</a>

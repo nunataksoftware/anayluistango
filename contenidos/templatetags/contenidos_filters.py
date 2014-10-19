@@ -4,6 +4,7 @@ from django import template
 from contenidos.models import Diapositiva, Novedad, Album
 from django.utils import translation
 from webanayluis import settings
+from django.core.urlresolvers import reverse
 
 register = template.Library()
 
@@ -63,4 +64,17 @@ def menu():
         'hay_novedades': hay_novedades,
         'diapositivas': diapositivas,
         'idiomas': idiomas,
+    }
+
+@register.inclusion_tag('contenidos/editar_elemento.html')
+def url_to_edit_object(user, object):
+    if user.is_staff:
+        url = reverse('admin:%s_%s_change' %(object._meta.app_label,  object._meta.module_name),  args=[object.pk] )
+    else:
+        url = False
+
+    print url
+
+    return {
+        'editar_url': url,
     }

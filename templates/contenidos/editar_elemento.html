@@ -1,0 +1,6 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+        {% if editar_url %}
+        <p class="editar-btn"><a href="{{ editar_url }}" target="_blank"><span class="fa fa-edit"></span> Editar</a></p>
+        {% endif %}
