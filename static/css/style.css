@@ -579,6 +579,10 @@
 						.main.style2.inactive.tipo-derecha .content {
 							left: 100%;
 						}
+
+			.content.style2 a {
+				color: #000;
+			}
 		
 			.main.style3 {
 				text-align: center;
