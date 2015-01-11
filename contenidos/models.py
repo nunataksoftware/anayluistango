@@ -113,6 +113,8 @@ class Novedad(models.Model):
         source='imagen',
         format='JPEG')
 
+    mostrar_imagen = models.BooleanField(default=True, help_text="Indicar si la imagen se va a mostrar en la vista detalle")
+
     idioma = models.ForeignKey(Idioma)
 
     objects = ContenidoManager()
