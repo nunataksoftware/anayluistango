@@ -9,7 +9,7 @@
 {% block contenidos %}
 
     <article>
-        <header {% if object.mostrar_imagen %}class="diapositiva main tipo-intro dark fullscreen" style="background: url('{{ object.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: top center; background-repeat: no-repeat;" {% else %} class="main style3" {% endif %}>
+        <header {% if object.mostrar_imagen %}class="diapositiva main tipo-intro dark fullscreen" style="background: url('{{ object.imagen_home.url }}'); background-size: cover; background-attachment: fixed; background-position: top center; background-repeat: no-repeat;" {% else %} class="main style3 slim" {% endif %}>
             <h2>{{ object.titulo }}</h2>{% url_to_edit_object user object %}
 
             <p><time pubdate="pubdate" datetime="{{ object.pub_date|date:"c" }}">{{ object.pub_date|date }}</time></p>

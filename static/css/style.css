@@ -588,6 +588,9 @@
 				text-align: center;
 				padding: 6em 0 6em 0;
 			}
+			.main.style3.slim {
+				padding: 0;
+			}
 
 				.main.style3 .content {
 				}
@@ -823,6 +826,7 @@
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;*/
+		clear: left;
 	}
 	
 		#contact .box {
