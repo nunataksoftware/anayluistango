@@ -42,7 +42,7 @@ def novedades(cantidad=False):
 @register.inclusion_tag('contenidos/fotos.html')
 def fotos():
 
-    album = Album.objects.all_language(translation.get_language()).last()
+    album = Album.objects.all_language(translation.get_language()).first()
 
     return {
         'album': album,
